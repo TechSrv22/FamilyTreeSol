@@ -1,46 +1,20 @@
-# Getting Started with Create React App
+**Question**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You are tasked with building a small family tree explorer application using React and TypeScript. Given a nested data structure representing family members and their relationships, you must provide an interface that allows users to view the tree and search for members. 
+Data Structure:
+Every family member is represented as:
+type FamilyMember = { 
+   id: number; 
+   name: string; 
+   birthYear: number; 
+   children: FamilyMember[]; 
+}; 
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tasks: 
+Family TreeDesign and 	implement a component that recursively renders the family tree. Each 	member should display their name, and children should be visually 	nested or indented underneath their parent. 
+Count of Descendants: Create a function 	that, given a family member, calculates the total number of 	descendants that member has, which includes all children, 	grandchildren, and so on. To ensure efficient computation, use 	dynamic programming techniques to avoid redundant calculations, 	specifically memoization. 
+React Skills: Implement a search input at 	the top of the application. As a user types a family member’s 	name, dynamically highlight matching names in the tree without 	re-rendering the entire tree. 
+Performance: As you build, consider the 	application’s performance, especially as the tree’s size grows. 
+ 
+Sample Data: 
+const familyData = [ { id: 1, name: “John Doe”, birthYear: 1945, children: [ { id: 2, name: “Anna Doe”, birthYear: 1973, children: [ { id: 5, name: “Ella Doe”, birthYear: 2000, children: [] }, { id: 6, name: “Lucas Doe”, birthYear: 2003, children: [] } ] }, { id: 3, name: “Robert Doe”, birthYear: 1978, children: [ { id: 7, name: “Sophie Doe”, birthYear: 2010, children: [] } ] }, { id: 4, name: “Emily Doe”, birthYear: 1985, children: [ { id: 8, name: “James Doe”, birthYear: 2015, children: [ { id: 9, name: “Mia Doe”, birthYear: 2030, children: [] } ] } ] } ] }, { id: 10, name: “Jane Smith”, birthYear: 1950, children: [ { id: 11, name: “Ethan Smith”, birthYear: 1980, children: [] } ] } ]; 
